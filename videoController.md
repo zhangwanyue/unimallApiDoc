@@ -31,10 +31,10 @@
 正确时：
 ```json
 {
-    "uploadauth": "xxx"(base64编码),
+    "uploadauth": "xxx(base64编码)",
     "path": "/video/upload",
     "videoid": "7f5bc39495ef4669a235de45242dc3b0",
-    "uploadaddress": "xxx"(base64编码),
+    "uploadaddress": "xxx(base64编码)",
     "message": "success",
     "status": 200,
     "timestamp": 1589600504060
@@ -66,7 +66,7 @@
 
 * request类型
 
-POST
+  POST
 
 * url
   
@@ -99,7 +99,7 @@ POST
     "videotitle": "this is title",
     "videoid": "c5bcec9584e64422992830f1e23d7446",
     "message": "success",
-    "playauth": "xxx"(base64编码),
+    "playauth": "xxx(base64编码)",
     "status": 200,
     "timestamp": 1589613331729
 }
