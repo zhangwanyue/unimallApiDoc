@@ -1,6 +1,6 @@
 ## 1. 获取视频上传凭证和上传地址
 
-#### request
+### request
 
 * request类型  
   
@@ -39,7 +39,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-#### response
+### response
 
 * response body
 
@@ -92,7 +92,7 @@ $.ajax(settings).done(function (response) {
 
 ## 2. 刷新视频上传凭证
 
-#### request
+### request
 
 * request类型
 
@@ -129,7 +129,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-#### reponse
+### reponse
 
 * reponse body
 
@@ -182,7 +182,7 @@ $.ajax(settings).done(function (response) {
 
 ## 3. 获取视频播放凭证
 
-#### request
+### request
 
 * request类型
 
@@ -219,7 +219,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-#### response 
+### response 
 
 * response body
 
