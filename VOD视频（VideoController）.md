@@ -2,20 +2,20 @@
 
 ### request
 
-* request类型  
-  
+* request类型
+
   POST
 
-* url  
-  
+* url
+
   `xxx:8080/video/upload`
 
 * request body
 
-| 参数 | 说明 |
-| :--- | :--- |
-| filename | 视频名**（必须包含文件类型后缀）** |
-| title | 视频标题 |
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| filename | String | 视频名**（必须包含文件类型后缀）** |
+| title | String | 视频标题 |
 
 * 样例：
 
@@ -43,16 +43,16 @@ $.ajax(settings).done(function (response) {
 
 * response body
 
-| 参数 | 说明 |
-| :--- | :--- |
-| videoid | 视频id |
-| uploadauth | 视频上传凭证(base64编码) |
-| uploadaddress | 视频上传地址(baseh64编码) |
-| path | 请求url |
-| status | 状态码 |
-| message | 状态消息 |
-| error | 错误标识 |
-| timestamp | 时间戳 |
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| videoid | String | 视频id |
+| uploadauth | String | 视频上传凭证\(base64编码\) |
+| uploadaddress | String | 视频上传地址\(baseh64编码\) |
+| path | String | 请求url |
+| status | int | 状态码 |
+| message | String | 状态消息 |
+| error | String | 错误标识 |
+| timestamp | long | 时间戳 |
 
 * 正确时：
 
@@ -99,14 +99,14 @@ $.ajax(settings).done(function (response) {
   POST
 
 * url
- 
- `xxx:8080/video/refresh-upload`
+
+  `xxx:8080/video/refresh-upload`
 
 * request body
 
-| 参数 | 说明 |
-| :--- | :--- |
-| videoid | 视频id |
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| videoid | String | 视频id |
 
 * 样例：
 
@@ -133,16 +133,16 @@ $.ajax(settings).done(function (response) {
 
 * reponse body
 
-| 参数 | 说明 |
-| :--- | :--- |
-| videoid | 视频id |
-| uploadauth | 视频上传凭证(base64编码) |
-| uploadaddress | 视频上传地址(baseh64编码) |
-| path | 请求url |
-| status | 状态码 |
-| message | 状态消息 |
-| error | 错误标识 |
-| timestamp | 时间戳 |
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| videoid | String | 视频id |
+| uploadauth | String | 视频上传凭证\(base64编码\) |
+| uploadaddress | String |视频上传地址\(baseh64编码\) |
+| path | String | 请求url |
+| status | int | 状态码 |
+| message | String | 状态消息 |
+| error | String | 错误标识 |
+| timestamp | long | 时间戳 |
 
 * 正确时：
 
@@ -189,14 +189,14 @@ $.ajax(settings).done(function (response) {
   POST
 
 * url
-  
+
   `xxx:8080/video/play-auth`
 
 * request body
 
-| 参数 | 说明 |
-| :--- | :--- |
-| videoid | 视频id |
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| videoid | String | 视频id |
 
 * 样例：
 
@@ -219,19 +219,19 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-### response 
+### response
 
 * response body
 
-| 参数 | 说明 |
-| :--- | :--- |
-| videoid | 视频id |
-| playauth | 视频播放凭证(base64编码) |
-| path | 请求url |
-| status | 状态码 |
-| message | 状态消息 |
-| error | 错误标识 |
-| timestamp | 时间戳 |
+| 参数 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| videoid | String | 视频id |
+| playauth | String | 视频播放凭证\(base64编码\) |
+| path | String | 请求url |
+| status | int | 状态码 |
+| message | String | 状态消息 |
+| error | String | 错误标识 |
+| timestamp | long | 时间戳 |
 
 * 正确时：
 
@@ -269,8 +269,6 @@ $.ajax(settings).done(function (response) {
     "path": "/video/play-auth"
 }
 ```
-
-
 
 
 
