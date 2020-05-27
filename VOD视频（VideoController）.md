@@ -10,7 +10,7 @@
 
   `xxx:8080/video/upload`
 
-* request body
+* request body(form-data)
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
@@ -102,7 +102,7 @@ $.ajax(settings).done(function (response) {
 
   `xxx:8080/video/refresh-upload`
 
-* request body
+* request body(form-data)
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
@@ -192,7 +192,7 @@ $.ajax(settings).done(function (response) {
 
   `xxx:8080/video/play-auth`
 
-* request body
+* request body(form-data)
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |

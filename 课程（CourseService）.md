@@ -6,14 +6,13 @@
 
 * 请求类型
 
-  GET
+`GET`或者`POST`都可以。下文只选择了一种请求为例说明。**如果使用`POST`请求，就把下文所写的`GET`请求`url`中的`param`放入`POST`请求的`form-data`中就可以了。反之亦然。**
 
-## 1. create
+# 1. create
 
-### request
+## request
 
-
-* 字段
+#### 字段
 
 \(1\) param字段
 
@@ -59,7 +58,7 @@
 | :--- | :--- |
 | `ADMINTOKEN` | admin token |
 
-* 样例
+#### 样例
 
 ```http
 GET /m.api?_gp=admin.course&_mt=create&courseDTO={
@@ -85,9 +84,9 @@ Content-Disposition: form-data; name="videoid"
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
 ```
 
-### response
+## response
 
-* response body
+#### response body
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
@@ -95,6 +94,8 @@ Content-Disposition: form-data; name="videoid"
 | errmsg | String | 错误信息（成功时为“成功”） |
 | errno | int | 错误码（成功时为200） |
 | timestamp | long | 时间戳 |
+
+#### 样例
 
 * 成功时
 
@@ -117,20 +118,21 @@ Content-Disposition: form-data; name="videoid"
 }
 ```
 
-courseDTO参数传递错误：
+**courseDTO参数传递错误（courseDTO不能少字段，可以多字段)**：
+
 ```json
 {
-    "errmsg": "系统未知异常",
-    "errno": 10000,
-    "timestamp": 1590472380829
+    "errmsg": "参数校验失败",
+    "errno": 10002,
+    "timestamp": 1590566305787
 }
 ```
 
-## 2. detail
+# 2. detail
 
-### request
+## request
 
-* 字段
+#### 字段
 
 \(1\) param字段
 
@@ -146,7 +148,7 @@ courseDTO参数传递错误：
 | :--- | :--- |
 | `ADMINTOKEN` | admin token |
 
-* 样例
+#### 样例
 
 ```http
 GET /m.api?_gp=admin.course&_mt=detail&courseId=1236791 HTTP/1.1
@@ -154,9 +156,9 @@ Host: localhost:8080
 ADMINTOKEN: 0914700397574545ae364f63bbdd9d97
 ```
 
-### response
+## response
 
-* response body
+#### response body
 
 内容格式见下文样例。
 Json中的data字段和上文create接口中的request param的courseDTO字段相似，多了`id`,`gmtCreate`,`gmtUpdate`三个字段。
@@ -167,6 +169,8 @@ Json中的data字段和上文create接口中的request param的courseDTO字段�
 | gmtCreate | long | 创建时间 |
 | gmtUpdate | long | 修改时间 |
 
+
+#### 样例
 
 * 成功时
 
@@ -210,9 +214,11 @@ Json中的data字段和上文create接口中的request param的courseDTO字段�
 }
 ```
 
-## 3. list
+# 3. list
 
-### request
+## request
+
+#### 字段
 
 \(1\) param字段
 
@@ -220,7 +226,7 @@ Json中的data字段和上文create接口中的request param的courseDTO字段�
 | :--- | :--- |
 | `_gp` | 接口方法所在组 |
 | `_mt` | 接口方法名 |
-| `page` | 页码(可选，默认１) |
+| `page` | 页码(可选，默认1) |
 | `limit` | 页面长度(可选，默认20) |
 | `type` | 课程类别(可选） |
 | `title` | 课程标题（可选） |
@@ -233,7 +239,7 @@ Json中的data字段和上文create接口中的request param的courseDTO字段�
 | :--- | :--- |
 | `ADMINTOKEN` | admin token |
 
-* 样例
+#### 样例
 
 ```http
 GET /m.api?_gp=admin.course&_mt=list&page=2&limit=2&type=&title=&status= HTTP/1.1
@@ -241,13 +247,13 @@ Host: localhost:8080
 ADMINTOKEN: dbc758f821a741d490dfd978e455cdff
 ```
 
-### response
+## response
 
-* response body
+#### response body
 
 内容格式见下文样例。
 
-data字段的格式:
+* data字段的格式:
 
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
@@ -262,6 +268,7 @@ data字段的格式:
 
 Json中的items字段和上文detail接口中的response body的data字段相同。
 
+#### 样例
 
 ```json
 {
@@ -311,11 +318,11 @@ Json中的items字段和上文detail接口中的response body的data字段相同
 ```
 
 
-## 4. delete
+# 4. delete
 
-### request
+## request
 
-* 字段
+#### 字段
 
 \(1\) param字段
 
@@ -331,7 +338,7 @@ Json中的items字段和上文detail接口中的response body的data字段相同
 | :--- | :--- |
 | `ADMINTOKEN` | admin token |
 
-* 样例
+#### 样例
 
 ```http
 GET /m.api?_gp=admin.course&_mt=delete&courseId=1236793 HTTP/1.1
@@ -339,7 +346,13 @@ Host: localhost:8080
 ADMINTOKEN: 9801cab4e9004c6db161379757bc0932
 ```
 
-### response
+## response
+
+#### 字段
+
+见样例。
+
+#### 样例
 
 * 成功时
 
@@ -362,11 +375,11 @@ ADMINTOKEN: 9801cab4e9004c6db161379757bc0932
 }
 ```
 
-## 5. batchDelete
+# 5. batchDelete
 
-### request
+## request
 
-* 字段
+#### 字段
 
 \(1\) param字段
 
@@ -383,7 +396,7 @@ ADMINTOKEN: 9801cab4e9004c6db161379757bc0932
 | `ADMINTOKEN` | admin token |
 
 
-* 样例
+#### 样例
 
 ```http
 GET /m.api?_gp=admin.course&_mt=batchDelete&courseIdsJson=[1236798, 1236799] HTTP/1.1
@@ -391,7 +404,13 @@ Host: localhost:8080
 ADMINTOKEN: 065caa8ad07b4c22ac3309ce83783df1
 ```
 
-### response
+## response
+
+#### 字段
+
+见样例。
+
+#### 样例
 
 * 成功时
 
@@ -414,8 +433,104 @@ ADMINTOKEN: 065caa8ad07b4c22ac3309ce83783df1
 }
 ```
 
+# 6. edit
+
+## request
+
+#### 字段
+
+\(1\) form-data字段
+
+| 参数 | 说明 |
+| :--- | :--- |
+| `_gp` | 接口方法所在组 |
+| `_mt` | 接口方法名 |
+| `courseDTO` | 课程信息\(json格式\) |
+
+courseDTO字段和上文create接口中的request param的courseDTO字段相似，多了`id`字段。
+**courseDTO字段中，只有`id`字段是必须的,其他都是可选**
 
 
+\(2\) header字段
+
+| 参数 | 说明 |
+| :--- | :--- |
+| `ADMINTOKEN` | admin token |
+
+
+#### 样例
+
+```http
+POST /m.api HTTP/1.1
+Host: 127.0.0.1:8080
+ADMINTOKEN: ce133b4091684ad582733d0c9a911713Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="courseDTO"
+
+{
+  "id": 1236801,
+  "type": "测试课程5",
+  "sectionNumber": 12,
+  "title": "这是一个测试课程5",
+  "img": "https://oss-unimall-prd.oss-cn-hangzhou.aliyuncs.com/test/avatar.jpg",
+  "videoId": "xxx",
+  "detail": "课程文案内容测试5",
+  "speaker": "主讲人Sigma",
+  "playTimes": 100,
+  "status": 0
+}
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="_gp"
+
+admin.course
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="_mt"
+
+edit
+----WebKitFormBoundary7MA4YWxkTrZu0gW
+```
+
+## response
+
+#### 字段
+
+见样例。
+
+#### 样例
+
+* 成功时
+
+```json
+{
+    "data": "ok",
+    "errmsg": "成功",
+    "errno": 200,
+    "timestamp": 1590558903133
+}
+```
+
+* 错误时
+
+**courseDTO字段中，没有`id`字段，会出现下面这个错误：**
+
+```json
+{
+    "errmsg": "参数校验失败",
+    "errno": 10002,
+    "timestamp": 1590560176280
+}
+```
+
+**courseDTO的`id`字段对应的课程不存在时，会出现下面这个错误：**
+
+```json
+{
+    "errmsg": "课程不存在",
+    "errno": 60002,
+    "timestamp": 1590561360630
+}
+```
 
 
 
