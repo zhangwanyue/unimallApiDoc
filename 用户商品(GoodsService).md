@@ -1,4 +1,20 @@
+下文所有接口:
+
+* url
+
+`xxx:8080/m.api`
+
+* 请求类型
+
+`GET`或者`POST`都可以。下文只选择了一种请求为例说明。**如果使用`POST`请求，就把下文所写的`GET`请求`url`中的`param`放入`POST`请求的`form-data`中就可以了。反之亦然。**
+
+* 参数
+
+`_gp=goods`
+
 ## getGoods
+
+`_mt=getGoods`
 
 #### 前端交互
 
@@ -85,6 +101,8 @@
 ```
 
 ## getGoodsPage
+
+`_mt=getGoodsPage`
 
 #### 前端交互
 
