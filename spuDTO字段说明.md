@@ -6,7 +6,7 @@
 | gmtCreate | Date | String | / |
 | gmtUpdate | Date | String | / |
 | **shortVideo**(新增字段) | String | String | 短视频链接\(oss\) |
-| **type**(新增字段) | Integer | Number | 0:普通商品；1:会员专属商品；2:会员 |
+| **type**(新增字段) | Integer | Number | 0:普通商品; 1:黄金会员专属商品; 2:铂金会员专属商品; 3:钻石会员专属商品; 4:黄金会员; 5:铂金会员; 6:钻石会员 |
 | originalPrice | Integer | Number | 原价 |
 | price | Integer | Number | 价格 |
 | vipPrice | Integer | Number | 会员价格 |
