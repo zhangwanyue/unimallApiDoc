@@ -27,6 +27,7 @@
 | 参数 | 类型 | 说明 |
 | :--- | :--- | :--- |
 | type | String | 课程类型 |
+| level | int | 会员等级（对应用户等级：0.普通 1-3.VIP会员） |
 | sectionNumber | int | 课程节数 |
 | title | String | 课程标题 |
 | img | String | 课程缩略图\(OSS\) |
@@ -41,6 +42,7 @@
 ```json
 {
 "type": "测试课程",
+"level": 0,
 "sectionNumber": 10,
 "title": "这是一个测试课程",
 "img": "https://oss-unimall-prd.oss-cn-hangzhou.aliyuncs.com/test/avatar.jpg",
@@ -63,6 +65,7 @@
 ```http
 GET /m.api?_gp=admin.course&_mt=create&courseDTO={
   "type": "测试课程3",
+  "level": 0,
   "sectionNumber": 12,
   "title": "这是一个测试课程3",
   "img": "https://oss-unimall-prd.oss-cn-hangzhou.aliyuncs.com/test/avatar.jpg",
@@ -187,6 +190,7 @@ Json中的data字段和上文create接口中的request param的courseDTO字段�
         "speaker": "主讲人Sam",
         "status": 0,
         "title": "这是一个测试课程2",
+        "level": 0,
         "type": "测试课程2",
         "videoId": "xxx"
     },
@@ -228,9 +232,10 @@ Json中的data字段和上文create接口中的request param的courseDTO字段�
 | `_mt` | 接口方法名 |
 | `page` | 页码(可选，默认1) |
 | `limit` | 页面长度(可选，默认20) |
-| `type` | 课程类别(可选） |
-| `title` | 课程标题（可选） |
-| `status` | 课程状态(0/1)（可选）|
+| `type` | 课程类别(可选) |
+| `level` | 课程等级(可选) |
+| `title` | 课程标题(可选) |
+| `status` | 课程状态(0/1)(可选) |
 
 
 \(2\) header字段
@@ -288,6 +293,7 @@ Json中的items字段和上文detail接口中的response body的data字段相同
                 "status": 1,
                 "title": "这是一个测试课程",
                 "type": "测试课程",
+                "level": 0,
                 "videoId": "fc239ebf28994485a502bfd0c8f241b5"
             },
             {
@@ -302,6 +308,7 @@ Json中的items字段和上文detail接口中的response body的data字段相同
                 "status": 0,
                 "title": "这是一个测试课程2",
                 "type": "测试课程2",
+                "level": 0,
                 "videoId": "xxx"
             }
         ],
@@ -471,6 +478,7 @@ Content-Disposition: form-data; name="courseDTO"
 {
   "id": 1236801,
   "type": "测试课程5",
+  "level": 0,
   "sectionNumber": 12,
   "title": "这是一个测试课程5",
   "img": "https://oss-unimall-prd.oss-cn-hangzhou.aliyuncs.com/test/avatar.jpg",
