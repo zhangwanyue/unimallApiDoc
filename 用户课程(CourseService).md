@@ -20,7 +20,7 @@
 | `_mt` | String | 接口方法名，此处填getCoursePage |
 | pageNo | int | 页码(可选，默认1) |
 | pageSize | int | 页面长度(可选，默认10) |
-| level | int | 会员等级(对应用户等级：0.普通 1-3.VIP会员)(可选) |
+| level | int | 会员等级(可选，对应用户等级：0.普通 1-3.VIP会员) |
 | title | String | 课程标题(可选) |
 
 * 样例
