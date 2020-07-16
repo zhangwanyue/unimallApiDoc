@@ -163,4 +163,70 @@ GET
 }
 ```
 
+# 3. list
+
+## request
+
+#### 字段
+
+\(1\) param字段
+
+| 参数 | 说明 |
+| :--- | :--- |
+| `_gp` | 接口方法所在组 |
+| `_mt` | 接口方法名 |
+| `page` | 页码(可选，默认1) |
+| `limit` | 页面长度(可选，默认20) |
+
+\(2\) header字段
+
+| 参数 | 说明 |
+| :--- | :--- |
+| `ADMINTOKEN` | admin token |
+
+#### 样例
+
+```http
+GET 
+--url /m.api?_gp=admin.invitation&_mt=list&page=&limit=&adminId=undefined 
+--header access_token=undefined
+```
+
+## response
+
+#### response body
+
+内容格式见下文样例。
+
+#### 样例
+
+```json
+{
+    "data": {
+        "code": 0,
+        "count": 1,
+        "items": [
+            {
+                "filingInvitationLinkJd": "xxx",
+                "filingInvitationLinkTb": "xxx",
+                "filingInvitationLinkVip": "123",
+                "gmtCreate": 1594663344000,
+                "gmtUpdate": 1594664241000,
+                "id": 1236790
+            }
+        ],
+        "msg": "第1页,共1条",
+        "pageNo": 1,
+        "pageSize": 20,
+        "total": 1,
+        "totalPageNo": 1
+    },
+    "errmsg": "成功",
+    "errno": 200,
+    "timestamp": 1594920776717
+}
+```
+
+
+
 
